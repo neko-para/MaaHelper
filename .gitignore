@@ -1,0 +1,5 @@
+node_modules
+webview-template
+out
+
+packages/maa-helper/assets/*/index.html
