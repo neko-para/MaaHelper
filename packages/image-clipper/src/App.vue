@@ -4,6 +4,7 @@ import { computed, onMounted, ref } from 'vue'
 const drawEl = ref<HTMLCanvasElement | null>(null)
 
 let image: HTMLImageElement | null = null
+const outputName = ref('assets/resource/pipeline/template/output.png')
 
 const canvasWidth = ref(0)
 const canvasHeight = ref(0)
@@ -247,7 +248,8 @@ function requireSave() {
     x: Math.round(x),
     y: Math.round(y),
     w: Math.round(w),
-    h: Math.round(h)
+    h: Math.round(h),
+    outputName: outputName.value
   })
 }
 </script>
@@ -257,7 +259,9 @@ function requireSave() {
     <div class="flex gap-2 items-center">
       <vscode-button @click="requireNew">Pull</vscode-button>
       <vscode-button @click="requireSave">Slice</vscode-button>
-      <span>{{ cropSize }}</span>
+      <vscode-text-field size="50" v-model="outputName"
+        >Save path</vscode-text-field
+      >
     </div>
     <div class="flex-1 relative">
       <canvas

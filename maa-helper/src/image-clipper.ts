@@ -1,6 +1,7 @@
 import vscode from 'vscode'
 import fs from 'fs'
 import Jimp from 'jimp'
+import path from 'path'
 
 export class ImageClipper {
   panel: vscode.WebviewPanel
@@ -46,17 +47,16 @@ export class ImageClipper {
         )
         break
       case 'save-image': {
-        const { x, y, w, h } = msg
+        const { x, y, w, h, outputName } = msg
         fs.readFile(
           this.context.asAbsolutePath('assets/test.png'),
           (err, data) => {
             const dir = vscode.workspace.workspaceFolders?.[0].uri.fsPath
             if (dir) {
+              let output = path.join(dir, outputName)
+              fs.mkdirSync(path.dirname(output), { recursive: true })
               Jimp.read(data).then(img => {
-                img
-                  .resize(1280, 720)
-                  .crop(x, y, w, h)
-                  .write(dir + '/output.png')
+                img.resize(1280, 720).crop(x, y, w, h).write(output)
               })
             }
           }

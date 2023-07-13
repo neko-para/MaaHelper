@@ -2,11 +2,12 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import {
   provideVSCodeDesignSystem,
-  vsCodeButton
+  vsCodeButton,
+  vsCodeTextField
 } from '@vscode/webview-ui-toolkit'
 
 import './main.css'
 
-provideVSCodeDesignSystem().register(vsCodeButton())
+provideVSCodeDesignSystem().register(vsCodeButton(), vsCodeTextField())
 
 createApp(App).mount('#app')
