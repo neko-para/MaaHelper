@@ -20,6 +20,18 @@
         "command": "maa-helper.open-clipper",
         "title": "MAA: Open Image Clipper"
       }
+    ],
+    "configuration": [
+      {
+        "title": "MaaHelper path",
+        "properties": {
+          "maahelper.path": {
+            "type": "string",
+            "default": "maahelper",
+            "description": "Absolute path(on windows) of maahelper"
+          }
+        }
+      }
     ]
   },
   "scripts": {

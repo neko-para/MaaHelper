@@ -7,7 +7,6 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.commands.registerCommand('maa-helper.open-clipper', () => {
       console.log('command triggered')
-
       if (!imageClipper) {
         imageClipper = new ImageClipper(context, () => {
           imageClipper = null
