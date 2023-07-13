@@ -24,6 +24,6 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: '../maa-helper/assets/image-clipper'
+    outDir: '../../maa-helper/assets/image-clipper'
   }
 })

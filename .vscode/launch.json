@@ -9,10 +9,8 @@
       "name": "Run Extension",
       "type": "extensionHost",
       "request": "launch",
-      "args": [
-        "--extensionDevelopmentPath=${workspaceFolder}/packages/maa-helper"
-      ],
-      "outFiles": ["${workspaceFolder}/packages/maa-helper/out/**/*.js"]
+      "args": ["--extensionDevelopmentPath=${workspaceFolder}/maa-helper"],
+      "outFiles": ["${workspaceFolder}/maa-helper/out/**/*.js"]
     }
   ]
 }

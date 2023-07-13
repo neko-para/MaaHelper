@@ -2,6 +2,7 @@
   "name": "maa-helper",
   "scripts": {},
   "workspaces": [
+    "maa-helper",
     "./packages/*"
   ]
 }

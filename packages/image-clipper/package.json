@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@vscode/webview-ui-toolkit": "^1.2.2",
+    "buffer": "^6.0.3",
     "vue": "^3.3.4"
   },
   "devDependencies": {
